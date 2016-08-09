@@ -65,7 +65,7 @@ class MTOMSoapClient extends SoapClient
                 // Get Binary
                 $binary = null;
                 preg_match('/Content-ID:[\s\S].+?'.$cid.'[\s\S].+?>([\s\S]*?)--uuid/', $response, $binary);
-                $binary = trim($binary[1]);
+                $binary = ltrim($binary[1]);
 
                 $binary = base64_encode($binary);
 
